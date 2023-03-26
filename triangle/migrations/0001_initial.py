@@ -12,13 +12,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='FirstForms',
+            name='Person',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(max_length=30)),
-                ('last_name', models.CharField(max_length=30)),
-                ('email_field', models.EmailField(max_length=30)),
-                ('date', models.DateTimeField(auto_now_add=True)),
+                ('first_name', models.CharField(max_length=50)),
+                ('last_name', models.CharField(max_length=50)),
+                ('email', models.EmailField(max_length=254)),
             ],
         ),
     ]

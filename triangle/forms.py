@@ -1,15 +1,15 @@
-from django import forms
+from django.core.validators import MinValueValidator
+from django.forms import ModelForm, fields, forms
 
-from triangle.models import FirstForms
-
-
-class GetForm(forms.Form):
-    numbers_1 = forms.IntegerField(label="Enter the value of the first leg", min_value=1, required=True)
-    numbers_2 = forms.IntegerField(label="Enter the value of the second leg", min_value=1, required=True)
+from .models import Person
 
 
-class FirstModelForm(forms.ModelForm):
+class TriangleForm(forms.Form):
+    leg1 = fields.FloatField(label="Leg 1", validators=[MinValueValidator(0.0000000000000000001)])
+    leg2 = fields.FloatField(label='Leg 2', validators=[MinValueValidator(0.0000000000000000001)])
 
+
+class PersonForm(ModelForm):
     class Meta:
-        model = FirstForms
-        fields = ["first_name", "last_name", "email_field"]
+        model = Person
+        fields = ['first_name', 'last_name', 'email']

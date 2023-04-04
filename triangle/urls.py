@@ -1,12 +1,11 @@
 from django.urls import path
 
-from triangle.views import crud_list_new, first_model_form, first_model_update_form, get_form
+from . import views
 
-
-app_name = "triangle"
+app_name = 'triangle'
 urlpatterns = [
-    path('', crud_list_new, name='new-index'),
-    path('getform/', get_form, name='get-form'),
-    path('createform/', first_model_form, name='first-model-form'),
-    path('first-model-form/<int:pk>/', first_model_update_form, name='first-model-update-form'),
+    path('triangle/', views.triangle, name='triangle'),
+    path('person/', views.person_list, name='person'),
+    path('person/register', views.person_register, name='person_register'),
+    path('person/<int:pk>/', views.person_update, name='person_update'),
 ]

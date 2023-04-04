@@ -1,0 +1,132 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "qwertzuiohdbfdhb=",
+        "username": "Helen",
+        "email": "helen.hello@gmail.com",
+        "date_joined": "2023-03-23T12:46:57.271Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "mdjvjnvjbvjbehhhhh=",
+        "username": "Eva",
+        "email": "evasummer77@gmail.com",
+        "date_joined": "2023-03-23T12:46:57.384Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "llldcjnvjbnvjnvjnjvnjnvjnv=",
+        "username": "Sandra",
+        "email": "lifeinfrance@gmail.com",
+        "date_joined": "2023-03-23T12:46:57.612Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "mdkmckvbdjbeghbbdvbvbbvbv=",
+        "username": "Alan",
+        "email": "alan1978@gmail.com",
+        "date_joined": "2023-03-23T20:09:37.786Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "evjbhebhvafdgdhcvcvcvvcnjhmdc=",
+        "username": "Veronika",
+        "email": "missveroni_ka01@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.623Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "swndjbfdveeeetrzrzfbbbbd=",
+        "username": "Vlada",
+        "email": "luckygirl888@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.679Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "pdvjidhfheuhhuhfuheuh=",
+        "username": "Claire",
+        "email": "marieclaire2023@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.736Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+        "password": "fkvorkgjhhurEhfehiU=",
+        "username": "Tommy",
+        "email": "tommy2000@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.793Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "bfdbjbjbjdbjrbbdjcj+jehf=",
+        "username": "Boris",
+        "email": "reallifefit@yahoo.com",
+        "date_joined": "2023-03-23T21:14:23.849Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "lfkdjbdihbrhhiIIbfdb=",
+        "username": "Jess",
+        "email": "jesslol09@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.905Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "dfnjbndjfnjnfbjdLLifjdbn=",
+        "username": "Tanvee",
+        "email": "tanvee.coral@gmail.com",
+        "date_joined": "2023-03-23T21:14:23.962Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "bjfdbbfjjdnfZZfnjsnf=",
+        "username": "Calvin",
+        "email": "calvinmielo@gmail.com",
+        "date_joined": "2023-03-23T21:14:24.018Z",
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+        "password": "fngjnfjgjPPnfdjnf=",
+        "username": "Casper",
+        "email": "caspertofriends@gmail.com",
+        "date_joined": "2023-03-23T21:14:24.074Z",
+    }
+}
+]

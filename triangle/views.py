@@ -1,77 +1,91 @@
 from django.shortcuts import get_object_or_404, redirect, render
 
-from triangle.forms import FirstModelForm, GetForm
-from triangle.models import FirstForms
+from .forms import PersonForm, TriangleForm
+from .models import Person
 
 
-def get_form(request):
-    calc = None
-    if "submit" in request.GET:
-        _get_form = GetForm(request.GET)
-        if _get_form.is_valid():
-            numbers_1 = _get_form.cleaned_data["numbers_1"]
-            numbers_2 = _get_form.cleaned_data["numbers_2"]
+def triangle(request):
+    hypotenuse = None
+    if "Submit" in request.GET:
+        user_form = TriangleForm(request.GET)
 
-            calc = ((numbers_1 ** 2) + (numbers_2 ** 2)) ** .5
+        if user_form.is_valid():
+            leg1 = user_form.cleaned_data['leg1']
+            leg2 = user_form.cleaned_data['leg2']
+            hypotenuse = round((((leg1 ** 2) + (leg2 ** 2)) ** 0.5), 2)
+
+            user_form = TriangleForm()
     else:
-        _get_form = GetForm(initial={"numbers_1": 0, "numbers_2": 0})
-    return render(
-        request,
-        "triangle/get_forms.html",
-        {
-            "get_form": _get_form,
-            "calc": calc,
-        }
-    )
+        user_form = TriangleForm()
+
+    return render(request, 'triangle/triangle.html', {'form': user_form, 'hypotenuse': hypotenuse})
 
 
-def new_index(request):
-    return render(request, "triangle/index.html", {})
+def person_list(request):
+    users = Person.objects.all()
+    return render(request, 'triangle/user_list.html', {'users': users})
 
 
-def crud_list_new(request):
-    objects = FirstForms.objects.all()
-    return render(
-        request,
-        "triangle/list.html",
-        {
-            "objects": objects,
-        }
-    )
-
-
-def first_model_form(request):
+def person_register(request):
     if request.method == 'POST':
-        first_form = FirstModelForm(request.POST)
-        if first_form.is_valid():
-            first_form.save()
-            return redirect("index")
+        user_form = PersonForm(request.POST)
+
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('triangle:person')
+
     else:
-        first_form = FirstModelForm()
-    return render(
-        request,
-        "triangle/codebase_model_form.html",
-        {
-            "first_form": first_form
-        }
-    )
+        user_form = PersonForm()
+
+    return render(request, 'triangle/user_register.html', {'form': user_form})
 
 
-def first_model_update_form(request, pk):
-    obj = get_object_or_404(FirstForms, pk=pk)
+def person_update(request, pk):
+    obj = get_object_or_404(Person, pk=pk)
+
     if request.method == 'POST':
-        first_form = FirstModelForm(request.POST, instance=obj)
-        if first_form.is_valid():
-            first_form.save()
-            return redirect("index")
+        user_form = PersonForm(request.POST, instance=obj)
+
+        if user_form.is_valid():
+            obj = user_form.save()
+            return redirect('triangle:person')
 
     else:
-        first_form = FirstModelForm(instance=obj)
-    return render(
-        request,
-        "triangle/codebase_update_form.html",
-        {
-            "first_form": first_form,
-            "obj": obj,
-        }
-    )
+        user_form = PersonForm(instance=obj)
+
+    return render(request, 'triangle/user_update.html', {'form': user_form, 'obj': obj})
+
+
+def person_list(request):
+    users = Person.objects.all()
+    return render(request, 'triangle/user_list.html', {'users': users})
+
+
+def person_register(request):
+    if request.method == 'POST':
+        user_form = PersonForm(request.POST)
+
+        if user_form.is_valid():
+            user_form.save()
+            return redirect('triangle:person')
+
+    else:
+        user_form = PersonForm()
+
+    return render(request, 'triangle/user_register.html', {'form': user_form})
+
+
+def person_update(request, pk):
+    obj = get_object_or_404(Person, pk=pk)
+
+    if request.method == 'POST':
+        user_form = PersonForm(request.POST, instance=obj)
+
+        if user_form.is_valid():
+            obj = user_form.save()
+            return redirect('triangle:person')
+
+    else:
+        user_form = PersonForm(instance=obj)
+
+    return render(request, 'triangle/user_update.html', {'form': user_form, 'obj': obj})
